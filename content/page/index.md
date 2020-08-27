@@ -1,14 +1,12 @@
-import Layout from '../lib/components/layout'
+---
+path: /
+title: Home
+---
+# PLANTICRUB _plan·ti·crub_
 
-export default function Home() {
-  return (
-    <Layout>
-      <h1>PLANTICRUB _plan·ti·crub_</h1>
-      <blockquote>
-      Noun.  A planticrub was a type of small dry-stoned walled garden/enclosure, designed as a nursery area for kale seedlings in the Shetland Islands. Also crub or, in Unst, crö or plantiecrö.
-      </blockquote>
-      <p>
-      I'm a garden planting designer and gardener based in Edinburgh, United Kingdom.
+> Noun.  A planticrub was a type of small dry-stoned walled garden/enclosure, designed as a nursery area for kale seedlings in the Shetland Islands. Also crub or, in Unst, crö or plantiecrö.
+
+I'm a garden planting designer and gardener based in Edinburgh, United Kingdom.
 
 I specialise in planting design, designing and planting new borders and renovating existing borders, transforming your garden through plants not hard landscaping.
 
@@ -16,8 +14,5 @@ I have a BA(Hons) in Intermedia Fine Art from Edinburgh College of Art. I comple
 In 2015 I exhibited a containerised plant display at Gardening Scotland, winning a bronze medal.
 
 I believe in the power of gardens, to have your own living oasis, a haven for wildlife and people alike. I love designing for year round interest, seeing life and colour in the garden on a dreich winter’s day lifts my mood like nothing else.
-      </p>
-      <img src="/img/me.jpg" alt="Robyn Marwick, Garden designer and gardener based in Edinburgh, United Kingdom" />
-    </Layout>
-  )
-}
+
+![Robyn Marwick, Garden designer and gardener based in Edinburgh, United Kingdom](/img/me.jpg "Robyn Marwick")
