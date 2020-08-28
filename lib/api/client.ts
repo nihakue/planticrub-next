@@ -12,6 +12,7 @@ export function getClient(preview: boolean): ContentfulClientApi {
   return _client = createClient({
     accessToken: preview ? envi.CONTENTFUL_CPA_API_KEY : envi.CONTENTFUL_CDA_API_KEY,
     space: envi.CONTENTFUL_SPACE,
-    environment: envi.CONTENTFUL_ENVIRONMENT
+    environment: envi.CONTENTFUL_ENVIRONMENT,
+    ...(preview ? {host: 'preview.contentful.com'} : {})
   });
 }
