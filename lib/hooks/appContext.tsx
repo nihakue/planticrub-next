@@ -1,7 +1,8 @@
 import React from 'react';
 
 type AppContext = {
-  contact: Record<string, string>
+  contact: Record<string, string>,
+  preview: boolean
 }
 
 export const AppContext = React.createContext<AppContext>({} as AppContext);

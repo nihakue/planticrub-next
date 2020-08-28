@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const api = new Api({preview});
   return {
     props: {
-      ...(await api.getGlobalContext())
+      appContext: await api.getGlobalContext()
     }
   }
 }

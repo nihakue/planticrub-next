@@ -8,8 +8,11 @@ type ApiProps = {
 }
 
 export class Api {
-  private client: ContentfulClientApi
+  private client: ContentfulClientApi;
+  private preview: boolean;
+
   constructor({preview}: ApiProps) {
+    this.preview = !!preview;
     this.client = getClient(preview);
   }
 
@@ -45,7 +48,8 @@ export class Api {
 
   async getGlobalContext() {
     return {
-      contact: await this.getContactDetails()
+      contact: await this.getContactDetails(),
+      preview: this.preview
     }
   }
 }
