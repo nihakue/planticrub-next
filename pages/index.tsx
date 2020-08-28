@@ -2,9 +2,9 @@ import Layout from '../lib/components/layout'
 import { Api } from '../lib/api'
 import { GetStaticProps } from 'next'
 
-export default function Home({contact}) {
+export default function Home() {
   return (
-    <Layout contact={contact}>
+    <Layout>
       <h1>PLANTICRUB _plan·ti·crub_</h1>
       <blockquote>
       Noun.  A planticrub was a type of small dry-stoned walled garden/enclosure, designed as a nursery area for kale seedlings in the Shetland Islands. Also crub or, in Unst, crö or plantiecrö.

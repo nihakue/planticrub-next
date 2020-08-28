@@ -20,9 +20,10 @@ export class Api {
   }
 
   async getServices(): Promise<any[]> {
-    return (await this.client.getEntries({
+    const services = await this.client.getEntries({
       content_type: 'services'
-    })).items[0].fields.items.map((it: any) => it.fields)
+    }) as any;
+    return services.items[0].fields.items.map((it: any) => it.fields)
   }
 
   async getGallery(): Promise<any[]> {
@@ -38,7 +39,7 @@ export class Api {
       'fields.id': 'robyn'
     });
     // Strip id from fields
-    const { id, ...contact } = detailsEntry.items[0]!.fields
+    const { id, ...contact } = detailsEntry.items[0]!.fields as any;
     return contact;
   }
 
