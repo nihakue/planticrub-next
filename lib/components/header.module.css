@@ -11,8 +11,17 @@
 }
 
 .header .logo {
-  flex: 2;
+  flex: 1;
+  align-self: center;
 }
+
+.header .logo img {
+  width: 50px;
+}
+
+/* .header img {
+  width: 50px;
+} */
 
 @media (max-width: 600px) {
   .header .logo {

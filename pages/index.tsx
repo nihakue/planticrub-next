@@ -1,8 +1,10 @@
 import Layout from '../lib/components/layout'
+import { Api } from '../lib/api'
+import { GetStaticProps } from 'next'
 
-export default function Home() {
+export default function Home({contact}) {
   return (
-    <Layout>
+    <Layout contact={contact}>
       <h1>PLANTICRUB _plan·ti·crub_</h1>
       <blockquote>
       Noun.  A planticrub was a type of small dry-stoned walled garden/enclosure, designed as a nursery area for kale seedlings in the Shetland Islands. Also crub or, in Unst, crö or plantiecrö.
@@ -20,4 +22,14 @@ I believe in the power of gardens, to have your own living oasis, a haven for wi
       <img src="/img/me.jpg" alt="Robyn Marwick, Garden designer and gardener based in Edinburgh, United Kingdom" />
     </Layout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const { preview } = ctx;
+  const api = new Api({preview});
+  return {
+    props: {
+      ...(await api.getGlobalContext())
+    }
+  }
 }
