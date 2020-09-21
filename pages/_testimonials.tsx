@@ -1,18 +1,18 @@
 import React from 'react'
 
 import Layout from '../lib/components/layout'
-import Gallery from '../lib/components/gallery'
-import { Api } from '../lib/api'
+import Testimonials from '../lib/components/testimonials'
+import { Api } from '../lib/api/contentful'
 import { GetStaticProps } from 'next'
 
-const GalleryPage = () => (
+const TestimonialsPage = ({testimonials}) => (
   <Layout>
-    <h1>Previous Work</h1>
-    <Gallery />
+    <h1>Testimonials</h1>
+    <Testimonials testimonials={testimonials} />
   </Layout>
 )
 
-export default GalleryPage
+export default TestimonialsPage
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { preview } = ctx;
@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       appContext: await api.getGlobalContext(),
-      gallery: await api.getGallery()
+      testimonials: await api.getTestimonials()
     }
   }
 }

@@ -1,4 +1,4 @@
-import '../lib/styles/globals.css'
+import '../styles/tailwind.css';
 import { AppContext } from '../lib/hooks/appContext'
 
 

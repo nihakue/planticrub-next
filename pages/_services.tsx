@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../lib/components/layout'
 import Services from '../lib/components/services'
-import { Api } from '../lib/api';
+import { Api } from '../lib/api/contentful'
 import { GetStaticProps } from 'next';
 
 export default function ServicesPage({services}){

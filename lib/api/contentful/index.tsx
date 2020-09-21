@@ -52,4 +52,12 @@ export class Api {
       preview: this.preview
     }
   }
+
+  async getLandingPage() {
+    const response = await this.client.getEntries<{body: any}>({
+      content_type: 'page-landing'
+    });
+
+    return response?.items?.[0];
+  }
 }

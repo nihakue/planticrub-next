@@ -6,16 +6,16 @@ import Nav from './nav'
 
 import styles from './header.module.css'
 
-const Header = () => {
+function Header() {
   const title = "Planticrub Garden Design"
   return (
-    <>
+    <React.Fragment>
       <Head>
         <title>{title}</title>
         <meta name="description" content="Planticrub Garden Design" />
         <meta name="keywords" content="garden design, gardening, design" />
       </Head>
-      <div className={styles.header}>
+      <header className="flex align-middle justify-center py-4 text-blue-500">
         <Link
           href="/"
         >
@@ -24,7 +24,7 @@ const Header = () => {
           }}><img width="50px" src="/img/logo.png" alt="logo" /></a>
         </Link>
         <div className="logo">
-          <h1>
+          <h1 className="text-4xl font-thin">
             <Link
               href="/"
             >
@@ -35,8 +35,8 @@ const Header = () => {
           </h1>
         </div>
         <Nav />
-      </div>
-    </>
+      </header>
+    </React.Fragment>
   )
 }
 
