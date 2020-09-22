@@ -7,8 +7,10 @@ import { GetStaticProps } from 'next'
 
 const TestimonialsPage = ({testimonials}) => (
   <Layout>
-    <h1>Testimonials</h1>
-    <Testimonials testimonials={testimonials} />
+    <h1 className="typ-h1">Testimonials</h1>
+    <article className="prose">
+      <Testimonials testimonials={testimonials} />
+    </article>
   </Layout>
 )
 

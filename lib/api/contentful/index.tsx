@@ -24,9 +24,9 @@ export class Api {
 
   async getServices(): Promise<any[]> {
     const services = await this.client.getEntries({
-      content_type: 'services'
+      content_type: 'serviceDescription'
     }) as any;
-    return services.items[0].fields.items.map((it: any) => it.fields)
+    return services.items;
   }
 
   async getGallery(): Promise<any[]> {

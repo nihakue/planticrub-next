@@ -3,3 +3,11 @@
 @tailwind  components;
 /* purgecss end ignore */
 @tailwind  utilities;
+
+.typ-h1 {
+  @apply text-3xl font-thin mb-6 text-center;
+}
+
+.stack-1 > * + * {
+  @apply mt-4
+}
