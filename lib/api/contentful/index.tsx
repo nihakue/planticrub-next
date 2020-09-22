@@ -60,4 +60,12 @@ export class Api {
 
     return response?.items?.[0];
   }
+
+  async getGardenDesignPage() {
+    const response = await this.client.getEntries({
+      "sys.id": "7EkfIbN6qR5bMalocZSIjC"
+    });
+    console.log(response);
+    return response.items?.[0]?.fields;
+  }
 }
