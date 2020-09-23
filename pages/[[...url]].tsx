@@ -33,7 +33,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       '/',
       '/gallery',
       '/services',
-      '/testimonials'
     ],
     fallback: false
   }
