@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Layout from '../lib/components/layout'
-import Testimonials from '../lib/components/testimonials'
 import { Api } from '../lib/api/contentful'
 import { GetStaticProps } from 'next'
+import Testimonials from '../lib/components/Testimonials'
 
 const TestimonialsPage = ({testimonials}) => (
   <Layout>

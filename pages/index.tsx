@@ -26,14 +26,3 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     }
   }
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [
-      '/',
-      '/gallery',
-      '/services',
-    ],
-    fallback: false
-  }
-}

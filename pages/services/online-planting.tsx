@@ -9,6 +9,9 @@ export default function OnlinePlantingPage({ }) {
   return (
     <Layout>
       <h1 className="typ-h1">Online Planting</h1>
+      <p className="font-light">
+        This content is still being written.
+      </p>
     </Layout>
   )
 }

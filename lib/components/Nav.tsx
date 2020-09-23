@@ -2,9 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
-import styles from './nav.module.css'
-
-const pages = ['/', '/gallery', '/services', '/testimonials'];
+const pages = ['/', '/projects', '/services', '/testimonials'];
 const upper = lower => lower.replace(/^\w/, c => c.toUpperCase())
 
 function formatPath(path) {
@@ -17,15 +15,16 @@ function formatPath(path) {
 export default function Nav() {
   const router = useRouter();
   return (
-    <nav className={styles.nav}>
-      <ul>
-        {pages.map((path) => (
-          <li key={path}>
+    <nav className="">
+      <ul className="flex flex-wrap h-full items-center">
+        {pages.map((path) => {
+          const active = router.asPath === path;
+          return (<li className={`ml-3 p-1 py-0 ${active ? "border-b-2" : ""}`} key={path}>
             <Link href={path}>
-              <a className={router.pathname === path ? styles.active : ''}>{formatPath(path)}</a>
+              <a>{formatPath(path)}</a>
             </Link>
           </li>
-        ))}
+        )})}
       </ul>
     </nav>
   )

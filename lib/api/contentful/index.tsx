@@ -29,10 +29,6 @@ export class Api {
     return services.items;
   }
 
-  async getGallery(): Promise<any[]> {
-    return []
-  }
-
   async getContactDetails() {
     if (_cachedDetails) {
       return _cachedDetails;
@@ -65,7 +61,13 @@ export class Api {
     const response = await this.client.getEntries({
       "sys.id": "7EkfIbN6qR5bMalocZSIjC"
     });
-    console.log(response);
     return response.items?.[0]?.fields;
+  }
+
+  async getProjects() {
+    const response = await this.client.getEntries({
+      content_type: "project"
+    });
+    return response.items ?? [];
   }
 }
