@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Layout from '../lib/components/layout'
+import Layout from '../lib/components/Layout'
 import { Api } from '../lib/api/contentful'
 import { GetStaticProps } from 'next';
 import { RichText } from '../lib/components/RichText';
@@ -10,6 +10,7 @@ export default function ProjectsPage({ projects }) {
     <Layout>
       <h1 className="typ-h1">My Projects</h1>
       <div className="flex flex-col mx-auto w-full justify-center stack-2">
+        {projects.length === 0 && <h2 className="text-center font-semibold text-lg">No projects found</h2>}
         {projects.map((project) => {
           const { title, media, date, description } = project.fields;
           return(

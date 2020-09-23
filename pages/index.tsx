@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Layout from '../lib/components/layout'
+import Layout from '../lib/components/Layout'
 import { Api } from '../lib/api/contentful'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { RichText } from '../lib/components/RichText'
@@ -8,7 +8,7 @@ import { RichText } from '../lib/components/RichText'
 export default function Home({body}: any) {
   return (
     <Layout>
-      <article className="prose-xl">
+      <article className="prose prose-xl">
         <RichText document={body} />
       </article>
     </Layout>

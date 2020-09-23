@@ -1,9 +1,8 @@
 import React from 'react'
 
-import Layout from '../../lib/components/layout'
+import Layout from '../../lib/components/Layout'
 import { Api } from '../../lib/api/contentful'
 import { GetStaticProps } from 'next';
-import { ServiceCard } from '../../lib/components/ServiceCard';
 import { RichText } from '../../lib/components/RichText';
 import Head from 'next/head';
 
