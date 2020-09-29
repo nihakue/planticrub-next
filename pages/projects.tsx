@@ -17,13 +17,13 @@ export default function ProjectsPage({ projects }) {
             <section className="flex flex-col w-full items-center stack-1" key={project.sys.id}>
               <div className="text-center">
                 <h2 className="font-semibold text-lg">{title}</h2>
-                <p className="font-normal text-sm">{new Date().toLocaleDateString('en-uk', {
+                <p className="font-normal text-sm">{new Date(date).toLocaleDateString('en-uk', {
                   month: 'long',
                   year: 'numeric'
                 })}</p>
               </div>
               <div className="grid grid-cols-3 gap-4 w-full">
-                {media.map(im => <div style={{backgroundImage: `url(${im.fields.file.url})`, height: '22vw'}} className="bg-clip-border bg-cover bg-center w-full" key={im.sys.id} />)}
+                {media?.map(im => <div style={{backgroundImage: `url(${im.fields.file.url})`, height: '22vw'}} className="bg-clip-border bg-cover bg-center w-full" key={im.sys.id} />)}
               </div>
               <article className="text-lg font-light">
                 <RichText document={description} />
