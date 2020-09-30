@@ -11,13 +11,13 @@ export default function Home({landingFields} : any) {
     <Layout>
       <div className="stack-2 py-4">
         <section className="flex justify-center lg:justify-between stack-1 items-center flex-wrap">
-          <div className="flex flex-col md:mr-10">
+          <div style={{minWidth: '200px'}}className="flex flex-col mr-10 flex-1">
             <h1 className="text-xl font-semibold">{title}</h1>
             <div className="font-light">
               <RichText document={subtitle} />
             </div> 
           </div>
-          <div className="rounded w-3/5 max-w-xl bg-clip-border bg-cover bg-center" style={{minWidth: '400px', height: '400px', backgroundImage: `url(${splash.fields.file.url}?fl=progressive&h=400)`}}>
+          <div className="w-full rounded lg:w-3/5 max-w-xl bg-clip-border bg-cover bg-center" style={{minWidth: '400px', height: '400px', backgroundImage: `url(${splash.fields.file.url}?fl=progressive&h=400)`}}>
           </div>
         </section>
       </div>
