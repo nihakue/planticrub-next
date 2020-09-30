@@ -4,7 +4,7 @@ import { ContentfulClientApi } from "contentful";
 let _cachedDetails;
 
 type ApiProps = {
-  preview: boolean
+  preview?: boolean
 }
 
 export class Api {
@@ -13,7 +13,7 @@ export class Api {
 
   constructor({preview}: ApiProps) {
     this.preview = !!preview;
-    this.client = getClient(preview);
+    this.client = getClient(this.preview);
   }
 
   async getTestimonials(): Promise<any[]> {
