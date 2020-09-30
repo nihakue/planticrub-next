@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
-const pages = ['/', '/projects', '/services', '/testimonials'];
+const pages = ['/', '/projects', '/services', '/testimonials', '/about'];
 const upper = lower => lower.replace(/^\w/, c => c.toUpperCase())
 
 function formatPath(path) {

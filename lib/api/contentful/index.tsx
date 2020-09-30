@@ -70,4 +70,11 @@ export class Api {
     });
     return response.items ?? [];
   }
+
+  async getAbout() {
+    const response = await this.client.getEntries({
+      content_type: "pageAbout"
+    });
+    return response?.items?.[0]
+  }
 }

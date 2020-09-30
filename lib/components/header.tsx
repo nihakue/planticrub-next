@@ -13,7 +13,7 @@ function Header() {
         <meta name="description" content="Planticrub Garden Design" />
         <meta name="keywords" content="garden design, gardening, design" />
       </Head>
-      <header className="flex justify-between py-4 text-blue-500">
+      <header className="flex justify-between py-6 text-blue-500">
         <Link
           href="/"
         >
