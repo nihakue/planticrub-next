@@ -1,5 +1,6 @@
 import { getClient } from "./client";
 import { ContentfulClientApi } from "contentful";
+import { getEnvironment } from "./environment";
 
 let _cachedDetails;
 
@@ -10,10 +11,12 @@ type ApiProps = {
 export class Api {
   private client: ContentfulClientApi;
   private preview: boolean;
+  private instaKey: string;
 
   constructor({preview}: ApiProps) {
     this.preview = !!preview;
     this.client = getClient(this.preview);
+    this.instaKey = getEnvironment().INSTA_TOKEN;
   }
 
   async getTestimonials(): Promise<any[]> {
@@ -84,5 +87,10 @@ export class Api {
       content_type: "pageAbout"
     });
     return response?.items?.[0]
+  }
+
+  async getInstagram() {
+    const response = await fetch(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,timestamp&access_token=${this.instaKey}`);
+    return (await response.json()).data;
   }
 }
