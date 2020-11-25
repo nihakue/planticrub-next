@@ -57,11 +57,19 @@ export class Api {
     return response?.items?.[0];
   }
 
-  async getGardenDesignPage() {
+  async getById(id: string) {
     const response = await this.client.getEntries({
-      "sys.id": "7EkfIbN6qR5bMalocZSIjC"
+      "sys.id": id,
     });
     return response.items?.[0]?.fields;
+  }
+
+  async getGardenDesignPage() {
+    return await this.getById("7EkfIbN6qR5bMalocZSIjC");
+  }
+
+  async getOnlinePlantingPage() {
+    return await this.getById("1sTyVV2tRqDCgy4FFesuU4");
   }
 
   async getProjects() {

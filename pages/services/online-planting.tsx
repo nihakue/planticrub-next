@@ -3,14 +3,20 @@ import React from 'react'
 import Layout from '../../lib/components/Layout'
 import { Api } from '../../lib/api/contentful'
 import { GetStaticProps } from 'next';
+import { RichText } from '../../lib/components/RichText';
+import Head from 'next/head';
 
-export default function OnlinePlantingPage({ }) {
+export default function GardenDesignPage({ page }) {
+  const { title, body } = page;
   return (
     <Layout>
-      <h1 className="typ-h1">Online Planting</h1>
-      <p className="font-light">
-        This content is still being written.
-      </p>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1 className="typ-h1">{title}</h1>
+      <article className="prose">
+        <RichText document={body} />
+      </article>
     </Layout>
   )
 }
@@ -20,7 +26,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const api = new Api({ preview });
   return {
     props: {
-      appContext: await api.getGlobalContext()
+      appContext: await api.getGlobalContext(),
+      page: await api.getGardenDesignPage()
     }
   }
 }
