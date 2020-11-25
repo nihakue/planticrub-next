@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       appContext: await api.getGlobalContext(),
-      page: await api.getGardenDesignPage()
+      page: await api.getOnlinePlantingPage()
     }
   }
 }
