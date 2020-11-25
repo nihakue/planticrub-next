@@ -7,9 +7,13 @@ import Link from 'next/link';
 const options: Options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
-      return <img src={`${node.data.target.fields.file.url}?fm=jpg&fl=progressive&w=600`} />
+      const src = node?.data?.target?.fields?.file?.url;
+      if (!src) {
+        return null;
+      }
+      return <img src={`${src}?fm=jpg&fl=progressive&w=600`} />
     },
-    [INLINES.HYPERLINK]: (node, children) => <Link href={node.data.uri}><a className="hover:underline text-blue-500">{children}</a></Link>
+    [INLINES.HYPERLINK]: (node, children) => <Link href={node?.data?.uri ?? '#'}><a className="hover:underline text-blue-500">{children}</a></Link>
   }
 }
 
