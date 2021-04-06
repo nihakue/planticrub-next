@@ -13,7 +13,7 @@ export default function Home({aboutFields, instaPosts} : any) {
       <article className="prose">
         <RichText document={bio} />
       </article>
-      <InstaFeed posts={instaPosts} />
+      {instaPosts && <InstaFeed posts={instaPosts} />}
     </Layout>
   )
 }
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     props: {
       appContext: await api.getGlobalContext(),
       aboutFields: await about?.fields ?? {},
-      instaPosts: await api.getInstagram(),
+      instaPosts: (await api.getInstagram()) ?? null,
     },
     revalidate: 10
   }
