@@ -4,7 +4,6 @@ import Layout from '../lib/components/Layout'
 import { Api } from '../lib/api/contentful'
 import { GetStaticProps } from 'next'
 import { RichText } from '../lib/components/RichText'
-import { InstaFeed } from '../lib/components/InstaFeed'
 
 export default function Home({aboutFields, instaPosts} : any) {
   const { bio } = aboutFields
@@ -13,7 +12,6 @@ export default function Home({aboutFields, instaPosts} : any) {
       <article className="prose">
         <RichText document={bio} />
       </article>
-      {instaPosts && <InstaFeed posts={instaPosts} />}
     </Layout>
   )
 }
@@ -26,8 +24,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     props: {
       appContext: await api.getGlobalContext(),
       aboutFields: await about?.fields ?? {},
-      instaPosts: (await api.getInstagram()) ?? null,
-    },
-    revalidate: 10
+    }
   }
 }

@@ -28,3 +28,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Updating / fixing the instagram access
+
+We use Instagram testers and the basic access
+
+You should be able to go to https://developers.facebook.com/apps/418239122877888/instagram-basic-display/basic-display/ to generate new long-lived tokens for the graph/me api. The env tokens are stored in Vercel Env Variables which are here: https://vercel.com/nihakue/planticrub/settings/environment-variables

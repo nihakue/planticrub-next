@@ -4,8 +4,9 @@ import Layout from '../lib/components/Layout'
 import { Api } from '../lib/api/contentful'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { RichText } from '../lib/components/RichText'
+import { InstaFeed } from '../lib/components/InstaFeed'
 
-export default function Home({landingFields} : any) {
+export default function Home({landingFields, instaPosts} : any) {
   const { title, subtitle, splash } = landingFields ?? {}
   return (
     <Layout>
@@ -17,8 +18,7 @@ export default function Home({landingFields} : any) {
               <RichText document={subtitle} />
             </div> 
           </div>
-          <div className="w-full rounded lg:w-3/5 max-w-xl bg-clip-border bg-cover bg-center" style={{minWidth: '400px', height: '400px', backgroundImage: `url(${splash.fields.file.url}?fl=progressive&h=400)`}}>
-          </div>
+          {instaPosts && <InstaFeed posts={instaPosts} />}
         </section>
       </div>
     </Layout>
@@ -32,7 +32,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       appContext: await api.getGlobalContext(),
-      landingFields: await landing?.fields
-    }
+      landingFields: await landing?.fields,
+      instaPosts: (await api.getInstagram()) ?? null,
+    },
+    revalidate: 10
   }
 }
