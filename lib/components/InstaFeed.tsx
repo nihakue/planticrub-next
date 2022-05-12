@@ -1,9 +1,15 @@
 import Image from 'next/image'
 
+function replaceDomain(url: string, domain: string) {
+    const toModify = new URL(url);
+    toModify.hostname = domain;
+    return toModify.href;
+}
+
 function InstaPost({post}) {
     const src = post?.media_url;
     if (typeof src === 'string') {
-        return <Image width={500} height={500} src={src}></Image>
+        return <Image width={500} height={500} src={replaceDomain(src, 'scontent.cdninstagram.com')}></Image>
     }
 }
 
